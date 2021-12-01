@@ -133,6 +133,9 @@ article {
 
 /* EXERCÍCIO 6: lateral */
 #lateral {
+  display: flex;
+  flex-direction: column; /*para posicionar como coluna*/
+  justify-content: space-between;
 }
 
 
