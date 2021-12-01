@@ -43,31 +43,49 @@ strong {
 
 
 /* EXERCÍCIO 2: layout da página */
+:root { /* escopo global */
+  --largura-conteudo: 800px;
+  --largura-lateral-esq: 154px;
+  --largura-resto: calc(var(--largura-conteudo) - var(--largura-lateral-esq));
+}
+
 #recipiente {
   /* layout da página aqui */
-  /* ... */
-  /* ... */
-  /* ... */
-  /* ... */
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 154px var(--largura-resto);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "lateral-esq parte-de-cima"
+    "lateral-esq parte-do-meio"
+    "lateral-esq parte-de-baixo";
 }
 
 #cabecalho-pagina {
-
+  grid-area: parte-de-cima;
 }
 
 #lateral {
-
+  grid-area: lateral-esq;
 }
 
 #cardapio {
-
+  grid-area: parte-do-meio;
 }
 
 #rodape-pagina {
-
+  grid-area: parte-de-baixo;
 }
 
+html, body {
+  min-height: 100vh;
+}
 
+body {
+  margin: 0px;
+}
 
 /* EXERCÍCIO 3: cabeçalho da página */
 #cabecalho-pagina {
