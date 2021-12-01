@@ -52,10 +52,11 @@ strong {
 #recipiente {
   /* layout da página aqui */
   min-height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: grid;
-  grid-template-columns: 154px auto;
+  grid-template-columns: 154px var(--largura-resto);
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 
     "lateral-esq parte-de-cima"
@@ -149,9 +150,14 @@ article {
 
 /* EXERCÍCIO 8: deslocamento no siri e peixe */
 #siri {
+  position: relative;
+  left: -10px;
+  top: 17px;
 }
 
 #peixe {
+  position: relative;
+  left: -44px;
 }
 
 /* EXERCÍCIO 9: bolhas - no HTML e no JS */
