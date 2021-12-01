@@ -48,6 +48,7 @@ function criaUmaBolha() {
   // pelo menos, vai esperar por TEMPO_MINIMO. Mas pode, adicionalmente,
   // esperar por mais [0%....100%] x TEMPO_VARIAVEL
   const proximaBolhaDaqui = TEMPO_MINIMO + Math.random() * TEMPO_VARIAVEL;
+  console.log(proximaBolhaDaqui);
   setTimeout(criaUmaBolha, proximaBolhaDaqui);
 }
 
