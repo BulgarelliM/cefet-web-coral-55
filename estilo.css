@@ -142,9 +142,15 @@ article {
 
 /* EXERCÍCIO 7: o ticket */
 #ticket {
+  position: fixed;
+  left: -89px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 500ms ease-in;
 }
 
 #ticket:hover {
+  left: 0px;
 }
 
 
