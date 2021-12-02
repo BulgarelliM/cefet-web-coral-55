@@ -176,3 +176,11 @@ article {
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
 
+.sirigueijo{
+  position: fixed;
+  width: 60px;
+  transform: scaleX(-1);
+  bottom: 0px;
+  right: 110px;
+  transition: left 500ms ease-in;
+}
