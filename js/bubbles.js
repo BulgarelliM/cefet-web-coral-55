@@ -44,20 +44,24 @@ function criaUmaBolha() {
     novaBolhaEl.remove();
   }, DURACAO);
 
-
   // pelo menos, vai esperar por TEMPO_MINIMO. Mas pode, adicionalmente,
   // esperar por mais [0%....100%] x TEMPO_VARIAVEL
-  const proximaBolhaDaqui = TEMPO_MINIMO + Math.random() * TEMPO_VARIAVEL;
-  console.log(proximaBolhaDaqui);
+  // Resolvi definir um tempo máximo possivel para igual ao TEMPO_VARIAVEL
+  // Diretrizes de utilizacao de Math.floor(): https://www.w3schools.com/js/js_random.asp
+  const proximaBolhaDaqui = TEMPO_MINIMO + Math.floor(Math.random() * (TEMPO_VARIAVEL - TEMPO_MINIMO));
+   
   setTimeout(criaUmaBolha, proximaBolhaDaqui);
 }
 
-
-
-
-criaUmaBolha();
-
-
-
+// Para reduzir o tempo de criacao, resolvi fazer mais chamadas a funcao
+// vai chamar a funcao mais vezes, entao terei mais bolhas sendo criadas
+criaUmaBolha(); 
 
 criaUmaBolha();
+
+
+// chamadas extras da funcao recursiva
+criaUmaBolha();
+criaUmaBolha(); 
+criaUmaBolha();
+criaUmaBolha(); 
