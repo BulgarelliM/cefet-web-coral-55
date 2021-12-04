@@ -4,8 +4,20 @@
 @import "fonts/ravie.css"; /*importando o arquivo ravie.css*/
 @import "fonts/verdana.css"; /*importando o arquivo para a fonte verdana*/
 
+
+:root { /* escopo global */
+  --largura-conteudo: 800px;
+  --largura-lateral-esq: 154px;
+  --largura-resto: calc(var(--largura-conteudo) - var(--largura-lateral-esq));
+  --cor-do-texto: #333;
+  --cor-do-fundo: rgba(255, 255, 255, 0.2);
+  --cor-recipiente: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  --cor-do-body:#fff;
+}
+
+
 body {
-  background-color: #fff;
+  background-color: var(--cor-do-body);
   font-family: "Verdana", sans-serif; /*segunda opcao para fontes (se a primeira nao existir), seja no body ou h1, vai ser sans-serif*/
 }
 
@@ -18,13 +30,13 @@ strong {
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  background-image: var(--cor-recipiente);
   border-left: 1px solid #d3d3d3;
   border-right: 1px solid #d3d3d3;
 }
 
 #cardapio {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--cor-do-fundo);
   border-top: 1px solid #aac0ae;
   border-bottom: 1px solid #aac0ae;
   border-left: 1px solid #aac0ae;
@@ -32,22 +44,17 @@ strong {
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-do-texto);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-do-texto);
 }
 
 
 /* EXERCÍCIO 2: layout da página */
-:root { /* escopo global */
-  --largura-conteudo: 800px;
-  --largura-lateral-esq: 154px;
-  --largura-resto: calc(var(--largura-conteudo) - var(--largura-lateral-esq));
-}
 
 #recipiente {
   /* layout da página aqui */
@@ -106,7 +113,7 @@ body {
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-do-texto);
   font-weight: normal;
   text-align: right;
 }
@@ -175,6 +182,15 @@ article {
    as custom properties */
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-do-texto: white;
+    --cor-do-fundo: rgba(0, 0, 80, 0.5);
+    --cor-recipiente: linear-gradient(to bottom, rgba(11,9,121,1), rgba(26,2,80,1) 90%, #000);
+    --cor-do-body: #04033b;
+  }
+}
 
 .sirigueijo{
   position: fixed;
